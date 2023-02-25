@@ -10,7 +10,11 @@
     "e2e": "ng e2e",
     "prepare": "husky install",
     "lint:format": "npx --no-install lint-staged && npx --no-install pretty-quick --staged",
-    "deploy:s3": "sls client deploy --no-config-change --no-policy-change --no-cors-change"
+    "cloudfront:invalidateCache": "sls invalidateCloudFrontCache",
+    "sls:deploy": "sls client deploy --no-config-change --no-policy-change --no-cors-change",
+    "sls:deploy:nc": "npm run sls:deploy -- --no-confirm",
+    "sls:build:deploy": "npm run build && npm run sls:deploy",
+    "sls:build:deploy:nc": "npm run build && npm run sls:deploy:nc"
   },
   "private": true,
   "dependencies": {
