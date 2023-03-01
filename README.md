@@ -29,3 +29,11 @@ Follow the steps:
 - git clone
 - npm i
 - ng serve
+
+## S3-website
+
+https://guitar-shop-angular-cloudfront.s3.eu-central-1.amazonaws.com/index.html
+
+## CloudFront URL
+
+https://d2ganenushnn70.cloudfront.net/

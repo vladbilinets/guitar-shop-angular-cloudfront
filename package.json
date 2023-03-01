@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "guitar-shop-angular-cloudfront",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,12 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prepare": "husky install",
-    "lint:format": "npx --no-install lint-staged && npx --no-install pretty-quick --staged"
+    "lint:format": "npx --no-install lint-staged && npx --no-install pretty-quick --staged",
+    "cloudfront:invalidateCache": "sls invalidateCloudFrontCache",
+    "sls:deploy": "sls client deploy --no-config-change --no-policy-change --no-cors-change",
+    "sls:deploy:nc": "npm run sls:deploy -- --no-confirm",
+    "sls:build:deploy": "npm run build && npm run sls:deploy",
+    "sls:build:deploy:nc": "npm run build && npm run sls:deploy:nc"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +30,8 @@
     "@angular/router": "^15.1.4",
     "bootstrap": "^4.6.0",
     "rxjs": "^7.8.0",
+    "serverless-finch": "^4.0.0",
+    "serverless-single-page-app-plugin": "^1.0.4",
     "tslib": "^2.5.0",
     "zone.js": "^0.12.0"
   },
